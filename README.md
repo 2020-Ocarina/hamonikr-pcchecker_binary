@@ -58,7 +58,7 @@ cd hamonikr-pcchecker_source-packaging/
 
 2. 다운로드 받은 디렉토리 안에서 아래와 같이 빌드하면 release 폴더 안에 설치 가능한 데비안 파일이 생성됩니다.
 ```
-sudo apt-get -- yes install debhelper
+sudo apt-get --yes install debhelper
 sudo dpkg-buildpackage
 cd ../
 ```
