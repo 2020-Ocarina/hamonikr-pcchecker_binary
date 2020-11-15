@@ -48,11 +48,25 @@ sudo add-apt-repository ppa:yeji980407/ppa
 sudo apt-get update
 sudo apt-get install hamonikr-pcchecker
 ```
-### ppa 사용 불가한 환경일 경우 (Gooroom OS)
+### ppa 사용 불가한 환경일 경우 (Gooroom OS), git clone을 통해 다운받고자 하는 경우
 
-다운로드 받은 디렉토리 안에서 아래와 같이 빌드하면 release 폴더 안에 설치 가능한 데비안 파일이 생성됩니다.
+1. GIT 레포지토리를 클론받고 해당 디렉토리로 들어갑니다.
 ```
-sh build
+git clone https://github.com/2020-Ocarina/hamonikr-pcchecker_source-packaging.git
+cd hamonikr-pcchecker_source-packaging/
+```
+
+2. 다운로드 받은 디렉토리 안에서 아래와 같이 빌드하면 release 폴더 안에 설치 가능한 데비안 파일이 생성됩니다.
+```
+sudo apt-get -- yes install debhelper
+sudo dpkg-buildpackage
+cd ../
+```
+※ls 명령어를 통해 hamonikr-pcchecker_[버전]_all.deb, hamonikr-pcchecker_[버전].tar.xz파일 확인할 수 있습니다.
+
+3. 이후 생성된 deb파일을 통해 프로그램을 설치해줍니다.
+```
+sudo dpkg -i hamonikr-pcchecker_2.1.3_all.deb
 ```
 
 ## HamoniKR PC Checker 삭제
